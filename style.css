@@ -206,7 +206,7 @@ form .settings input:focus{
 .modal{
 	max-height: 90vh;
 	min-height: 50vh;
-	width: 60vw;
+	width: 98vw;
 	/* background-color: var(--white); */
 	background-color: var(--teal);
 	
@@ -239,12 +239,15 @@ form .settings input:focus{
 	padding: 1em;
 	border-radius: 20px;
 	height: auto;
+	overflow-x: scroll;
 }
 .modal .modal-content-css{
 	margin: 0 10px 10px;
 	padding: 1em;
 	border-radius: 20px;
 	min-height: calc(50vh - 5vh);
+	overflow-x: scroll;
+
 }
 .modal .modal-close{
 	position: absolute;
@@ -402,3 +405,52 @@ form .settings input:focus{
 
 
 /************************************* Media Queries **************************************/
+@media (max-width:700px){
+	nav .brand-name {
+		width: 100%;
+		text-align: left;
+		font-size: 24px;
+		font-weight: bold;
+		padding: 0.5em;
+		margin: 0;
+	}
+	form {
+		display:grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-rows: 1fr 1fr;
+		margin-inline: auto;
+		border-radius:20px;
+	}
+	form .settings {
+		font-size: 25px;
+		padding:0.5em 2em;
+	}
+	form .settings{
+		font-size: 16px;
+	}
+	form .settings select, input[type="text"]{
+		height: 20px;
+		font-size: 16px;
+	}
+	form .settings .two-inputs .color-picker{
+		height:25px;
+		width: 25px;
+	}
+	.info-text p{
+		font-size: 10px;
+	}
+	.slider{
+		height: 10px;
+	}
+	form .settings .slider-value{
+		font-size: 16px;
+	}
+	.slider::-webkit-slider-thumb {
+		width: 15px; /* Set a specific slider handle width */
+		height: 15px; /* Slider handle height */
+	} 
+	.slider::-moz-range-thumb {
+		width: 15px; /* Set a specific slider handle width */
+		height: 15px; /* Slider handle height */
+	}
+}
