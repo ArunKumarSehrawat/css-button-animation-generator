@@ -239,15 +239,14 @@ form .settings input:focus{
 	padding: 1em;
 	border-radius: 20px;
 	height: auto;
-	overflow-x: scroll;
+	/* overflow-x: scroll; */
 }
 .modal .modal-content-css{
 	margin: 0 10px 10px;
 	padding: 1em;
 	border-radius: 20px;
 	min-height: calc(50vh - 5vh);
-	overflow-x: scroll;
-
+	/* overflow-x: scroll; */
 }
 .modal .modal-close{
 	position: absolute;
@@ -385,11 +384,12 @@ form .settings input:focus{
 /* Side Scroll Bar */
 ::-webkit-scrollbar {
 	width:8px;
+	height: 4px;
 }
    
 /* Track */
 ::-webkit-scrollbar-track {
-	background: var(--white);
+	background: var(--teal);
 }
 
 /* Handle */
@@ -399,7 +399,7 @@ form .settings input:focus{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--green);
+	background: var(--teal);
 }
 
 
@@ -446,11 +446,27 @@ form .settings input:focus{
 		font-size: 16px;
 	}
 	.slider::-webkit-slider-thumb {
-		width: 15px; /* Set a specific slider handle width */
-		height: 15px; /* Slider handle height */
+		width: 15px; 
+		height: 15px;
 	} 
 	.slider::-moz-range-thumb {
-		width: 15px; /* Set a specific slider handle width */
-		height: 15px; /* Slider handle height */
+		width: 15px;
+		height: 15px;
+	}
+
+
+	.modal .modal-content-html{
+		margin: 0 10px 10px;
+		padding: 1em;
+		border-radius: 20px;
+		height: auto;
+		overflow-x: scroll;
+	}
+	.modal .modal-content-css{
+		margin: 0 10px 10px;
+		padding: 1em;
+		border-radius: 20px;
+		min-height: calc(50vh - 5vh);
+		overflow-x: scroll;
 	}
 }

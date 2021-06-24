@@ -9,7 +9,6 @@ $(document).ready(function(){
 $(window).on("resize", function(){
      let fontSize = $("#btn").css("--font-size");
      fontSize = Number(fontSize.replace("px", ""));
-     console.log(fontSize)
      if(window.innerWidth <= 700 && fontSize >= 25){
           $("#btn").css("--font-size", "25px");
           $("#font-size-adjuster").val(25);
@@ -18,6 +17,7 @@ $(window).on("resize", function(){
 
      }
      if(window.innerWidth > 700){
+          console.log("increase")
           $("#btn").css("--font-size", `${currentFontSize}px`);
           $("#font-size-adjuster").val(currentFontSize);
           $("#font-size-slider-value").text(currentFontSize);
@@ -218,12 +218,27 @@ function removeElement(arr, element){
 
 
 // console.log(getClassProp(".hover-fade-in"))
+// console.log(getClassProp("hover-shrink"))
 function getClassProp(value){
      let rules = document.styleSheets[0].cssRules;
      let classes = [];
+     // for(i = 0; i < (rules.length); i++){
+     //      if((!rules[i].cssText.includes("@keyframes")) && rules[i].selectorText.includes(value)) classes.push(rules[i].cssText)
+     //      // console.log(rules[i].selectorText)
+     // }
+     // for(i = 0; i < rules.length; i++){
+     //      if(!rules[i].cssText.includes("@keyframes")){
+     //           if(rules[i].selectorText.includes(value) || !rules[i].cssText.includes("")){
+     //                classes.push(rules[i].selectorText)
+     //           }
+     //      }
+     // }
      for(i = 0; i < (rules.length); i++){
-          if(!rules[i].cssText.includes("@keyframes") && rules[i].selectorText.includes(value)) classes.push(rules[i].cssText)
+          if(rules[i].cssText.includes(value)){
+               classes.push(rules[i].cssText)
+          }
      }
+     // console.log(rules)
      return classes;
 }
 
